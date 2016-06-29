@@ -1,5 +1,6 @@
-function BankUser(userName,initialDeposit,balance){
+function BankUser(userName,password,initialDeposit,balance){
 this.userName=userName;
+this.password=password;
 this.initialDeposit=initialDeposit;
 this.balance=balance;
 this.deposit=function(amount){
@@ -27,8 +28,11 @@ $("#newUser-form").submit(function(event){
 event.preventDefault();
 
 var signUpUser=$("#accountHolderName").val();//yi
+var signUpUserPassword=$("#accountHolderPasssword").val();//yi
+console.log(accountHolderPasssword);
+debugger;
 var signUpAmmount=parseInt($("#initialDeposit").val());//300
-var newAccountHolder=new BankUser(signUpUser,signUpAmmount,signUpAmmount);
+var newAccountHolder=new BankUser(signUpUser,signUpUserPassword,signUpAmmount,signUpAmmount);
 totalUser.push(newAccountHolder);
 $("#listDisplay").html("<li>"+signUpUser+"Thank you for joining us! </li>"+
 "<li> Your current balance is"+signUpAmmount+"</li>");

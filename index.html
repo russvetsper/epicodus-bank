@@ -12,6 +12,7 @@
     <div class="container">
 
       <form id="newUser-form" class="form-group">
+        <h1>Sign Up to Epicouds Banks today</h1>
         <label for="accountHolderName">Enter firs and last name:</label>
         <input id="accountHolderName" class="form-control" required type="text" >
         <label for="initialDeposit">enter deposit ammount:</label>
@@ -20,6 +21,7 @@
       </form>
 
       <form id="returnUser-form" class="form-group">
+        <h1>deposit or withdraw</h1>
         <label for="returnUserName">Enter firs and last name:</label>
         <input id="returnUserName" class="form-control" required type="text" >
         <label for="returnDeposit">enter deposit ammount:</label>
@@ -29,12 +31,23 @@
         <button class="btn" type="submit" name="button">SUBMIT</button>
       </form>
 
-      <form id="closeRequest-form" class="form-group">
-        <select class="" name="">
-          <option value="1"></option>
-          <option value="1"></option>
+      <form id="balanceCheck-form" class="form-group">
+        <h1>Check Your Balance</h1>
+        <label for="checkBalanceName">Enter name:</label>
+        <input id="checkBalance" class="form-control" required type="text" >
+        <button class="btn" type="submit" name="button">SUBMIT</button>
+      </form>
 
+      <form id="closeRequest-form" class="form-group">
+        <h1>Close your accounts</h1>
+        <label for="closeName">Enter name:</label>
+        <input id="closeName" class="form-control" required type="text" >
+        <label> Are You Sure that You want to Close your Account
+        <select class="" name="" id="confirmationToClose">
+          <option value="1">Yes</option>
+          <option value="2">No</option>
         </select>
+      </label>
         <button class="btn" type="submit" name="button">SUBMIT</button>
       </form>
 

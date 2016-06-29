@@ -1,0 +1,20 @@
+form{
+width: 80%;
+background-color: #90C3D4;
+padding: 30px;
+}
+button{
+background-color: #BE9FC9;
+margin-top: 50px;
+}
+h1{
+  text-align: center;
+}
+#closeRequest-form .btn{
+padding: 20px;
+}
+
+body{
+
+font-family: 'Raleway', sans-serif;
+}

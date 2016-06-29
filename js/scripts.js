@@ -63,10 +63,36 @@ if(depositAmmount>0&&withdrawAmount===0){
       }
     }
   }else{
-    console.log("Error");
-
-
+    $("#listDisplay").html("<li>I am sorry! Something wrong. You might not in our system</li>");
 }
+});
+
+$("#closeRequest-form").submit(function(event){
+  event.preventDefault();
+  var colseAccountUser=$("#closeName").val();//yi
+  var closeConfirm=$("#confirmationToClose").val();
+  for (var i = 0; i < totalUser.length; i=i+1) {
+    if(colseAccountUser===totalUser[i].userName&&closeConfirm==="1"){
+      $("#listDisplay").html("<li> You are successful to close account </li>"+
+      "<li> Your  balance is $ "+totalUser[i].balance+" will sent to your home</li>");
+      totalUser.splice(i,0);
+      console.log(totalUser);
+    }
+  }
+
+});
+
+$("#balanceCheck-form").submit(function(event){
+  event.preventDefault();
+  var checkName=$("#checkBalanceName").val();//yi
+  for (var i = 0; i < totalUser.length; i=i+1) {
+    if(checkName===totalUser[i].userName){
+      $("#listDisplay").html("<li> Hello, "+checkName+"! </li>"+
+      "<li> Your  balance is $  "+totalUser[i].balance+" </li>");
+    }
+    debugger;
+  }
+
 });
 
 });

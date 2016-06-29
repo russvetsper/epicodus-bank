@@ -47,25 +47,35 @@ event.preventDefault();
 var signInUser=$("#accountHolderName").val();//yi
 var depositAmmount=parseInt($("#returnDeposit").val());//300
 var withdrawAmount=parseInt($("#returnWithdraw").val());
-
+var tryingPassword=$("#returnPasssword").val();
 if(depositAmmount>0&&withdrawAmount===0){
   for (var i = 0; i < totalUser.length; i=i+1) {
     if(signInUser===totalUser[i].userName){
+      if(tryingPassword===totalUser[i].password){
       totalUser[i].deposit(depositAmmount);
       console.log(  totalUser[i].balance);
       $("#listDisplay").html("<li>"+signInUser+"Thank you for joining us! </li>"+
       "<li> Your current balance is"+totalUser[i].balance+"</li>");
+    }else{
+      $("#listDisplay").html("<li>Wrong Password, Sorry</li>");
+      alert("Wrong Password");
     }
   }
+}
 }else if(withdrawAmount>0&&depositAmmount===0){
     for (var i = 0; i < totalUser.length; i=i+1) {
       if(signInUser===totalUser[i].userName){
+        if(tryingPassword===totalUser[i].password){
         totalUser[i].withdraw(withdrawAmount);
         console.log( totalUser[i].balance);
         $("#listDisplay").html("<li>"+signInUser+"Thank you for joining us! </li>"+
         "<li> Your current balance is"+totalUser[i].balance+"</li>");
+      }else{
+        $("#listDisplay").html("<li>Wrong Password, Sorry</li>");
+          alert("Wrong Password");
       }
     }
+  }
   }else{
     $("#listDisplay").html("<li>I am sorry! Something wrong. You might not in our system</li>");
 }
